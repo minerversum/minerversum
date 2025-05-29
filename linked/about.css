@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Main font */
+  background-color: #1E3A8A; /* Navy background color */
+  color: #fff; /* White text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+  text-align: center;
+}
+
+/* Apply Righteous Font to All Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Righteous', cursive;
+  color: #F0F4F8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Logo Styling */
+.logo {
+  font-family: 'Righteous', cursive;
+  font-size: 80px;
+  color: #F0F4F8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  animation: slideIn 1s ease-out; /* Logo animation */
+}
+
+/* Bio Card Styling with 3D Effect */
+.bio-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  color: #333;
+  transform: perspective(1000px) rotateY(10deg); /* 3D Effect */
+  animation: cardAnimation 1.5s ease-out; /* Card Animation */
+}
+
+/* Image inside Bio Card */
+.bio-image img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bio-image img:hover {
+  transform: scale(1.1); /* Hover zoom effect */
+}
+
+/* Bio Details */
+.bio-details {
+  max-width: 610px;
+}
+
+.bio-details h1 {
+  font-size: 36px;
+  color: #1E293B;
+  margin-bottom: 15px;
+}
+
+.bio-details p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 15px;
+  text-align: justify; /* 👈 Added this line */
+}
+
+
+.bio-details a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.bio-details a:hover {
+  text-decoration: underline;
+}
+
+/* Animation for the Logo */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation for the Bio Card */
+@keyframes cardAnimation {
+  0% {
+    transform: perspective(1000px) rotateY(50deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .bio-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bio-image img {
+    width: 190px;
+    height: 120px;
+  }
+
+  .logo {
+    font-size: 60px;
+  }
+
+  .bio-details h1 {
+    font-size: 28px;
+  }
+
+  .bio-details p {
+    font-size: 16px;
+  }
+}

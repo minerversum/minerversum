@@ -1,0 +1,99 @@
+:root {
+  --transition-duration: 0.5s;
+}
+
+body {
+  min-height: 100vh;
+  font-family: lato;
+  font-size: var(--font-size-p);
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: clamp(230px, 80%, 920px);
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin: 1rem;
+  padding: 0.7rem 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-duration);
+  overflow: hidden;
+}
+
+li:hover {
+  color: #efe;
+}
+
+li::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #0036a3;
+  bottom: 0;
+  left: 0;
+  transition: var(--transition-duration);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* li:hover::before {
+  height: 100%;
+} */
+
+li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  bottom: -100%;
+  background: #0036a3;
+  z-index: -1;
+  transition: var(--transition-duration);
+}
+
+li:hover span {
+  bottom: 0;
+}
+
+li span:nth-child(1) {
+  left: 0;
+}
+
+li span:nth-child(2) {
+  left: 25%;
+  transition-delay: 0.1s;
+}
+
+li span:nth-child(3) {
+  left: 50%;
+  transition-delay: 0.2s;
+  z-index: -1;
+}
+
+li:hover span:nth-child(3) {
+  bottom: 0;
+}
+
+li span:nth-child(4) {
+  left: 75%;
+  transition-delay: 0.2s;
+  z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
